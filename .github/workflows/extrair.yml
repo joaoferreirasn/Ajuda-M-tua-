@@ -1,0 +1,36 @@
+name: Extrair projeto Ajuda Mutua
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar projeto
+        uses: actions/checkout@v4
+
+      - name: Extrair ZIP
+        run: |
+          mkdir -p extracted
+          unzip -q grok-workspace.zip -d extracted
+
+          if [ -d "extracted/work" ]; then
+            rsync -a extracted/work/ ./ --exclude=".git/" --exclude=".github/workflows/extrair.yml"
+          else
+            rsync -a extracted/ ./ --exclude=".git/" --exclude=".github/workflows/extrair.yml"
+          fi
+
+          rm -rf extracted grok-workspace.zip
+
+      - name: Salvar arquivos no GitHub
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Importar projeto Ajuda Mutua"
+          git push
