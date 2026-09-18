@@ -11,26 +11,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Baixar projeto
+      - name: Baixar arquivos
         uses: actions/checkout@v4
 
-      - name: Extrair ZIP
+      - name: Descompactar projeto
         run: |
-          mkdir -p extracted
-          unzip -q grok-workspace.zip -d extracted
+          mkdir projeto
+          unzip -o grok-workspace.zip -d projeto
 
-          if [ -d "extracted/work" ]; then
-            rsync -a extracted/work/ ./ --exclude=".git/" --exclude=".github/workflows/extrair.yml"
+      - name: Copiar projeto para o repositorio
+        run: |
+          if [ -d "projeto/work" ]; then
+            cp -r projeto/work/. .
           else
-            rsync -a extracted/ ./ --exclude=".git/" --exclude=".github/workflows/extrair.yml"
+            cp -r projeto/. .
           fi
 
-          rm -rf extracted grok-workspace.zip
+          rm -rf projeto
+          rm -f grok-workspace.zip
 
-      - name: Salvar arquivos no GitHub
+      - name: Salvar projeto
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -m "Importar projeto Ajuda Mutua"
+          git commit -m "Extrair projeto Ajuda Mutua" || true
           git push
