@@ -1,0 +1,6 @@
+plugins { id 'com.android.application'; id 'org.jetbrains.kotlin.android' }
+
+android { namespace 'com.ajudamutua.app'; compileSdk 35
+    defaultConfig { applicationId 'com.ajudamutua.app'; minSdk 23; targetSdk 35; versionCode 1; versionName '1.0.0'; buildConfigField 'String', 'APP_URL', '"https://SEU-DOMINIO-AQUI"' }
+    buildFeatures { buildConfig true }
+}

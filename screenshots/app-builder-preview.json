@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Ajuda Mútua",
+      "hasCanvas": false,
+      "bodyTextLen": 805,
+      "bodyTextHash": "232485e6da181d1654780c070f1b1a3d964253d1aacb08db684261db58e125b4",
+      "bodyTextPrefix": "Ajuda Mútua Reciprocidade em círculo COMUNIDADE DE RECIPROCIDADE",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Ajuda Mútua",
+      "hasCanvas": false,
+      "bodyTextLen": 805,
+      "bodyTextHash": "232485e6da181d1654780c070f1b1a3d964253d1aacb08db684261db58e125b4",
+      "bodyTextPrefix": "Ajuda Mútua Reciprocidade em círculo COMUNIDADE DE RECIPROCIDADE",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}

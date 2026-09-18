@@ -1,0 +1,10 @@
+{
+  "name": "Ajuda Mútua",
+  "short_name": "Ajuda Mútua",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#125E54",
+  "lang": "pt-BR",
+  "description": "Comunidade de ajuda mútua com fila, créditos e transparência."
+}

@@ -1,0 +1,1 @@
+import{t as e}from"./react-SIfiwpqq.js";import{c as t}from"./useStore-7KrkfnlO.js";import{i as n}from"./index-D_reoizL.js";e();var r=t(),i=`/login`;function a({to:e=i}){return(0,r.jsx)(n,{to:e})}export{a as t};
